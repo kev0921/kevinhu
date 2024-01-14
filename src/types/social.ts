@@ -1,5 +1,5 @@
 export type Social = {
-  url: string;
+  href: string;
   icon: any;
   name: string;
 }

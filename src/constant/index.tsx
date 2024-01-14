@@ -71,7 +71,7 @@ const siteConfig = {
 };
 
 const resume = {
-  url: "https://drive.google.com/file/d/1KKVBejHxAr2PKhSCFufgnvdQTMUWt-u7/view?usp=sharing",
+  href: "/resume.pdf",
   icon: <CgAlbum />,
   name: "Resume",
 };
@@ -158,29 +158,39 @@ const companies = [
 
 const educations = [
   {
-    title: "University Technology Malaysia (UTM)",
-    alt: "utm image",
-    url: "https://www.utm.my/",
-    role: "Bachelor's Degree in Computer Science (Network and Security)",
-    skills: ["CGPA - 3.79", "CCNA", "Security Management", "Network Security"],
-    period: "Sept 2016 - Sept 2020",
+    title: "University of Toronto (UTSG)",
+    alt: "utsg image",
+    url: "https://www.utoronto.ca/",
+    role: "Bachelor's Degree in Computer Science",
+    skills: ["CGPA - 3.74", "Data Structures & Algorithms", "Software Design", "Object Oriented Programming", "Operating Systems", ],
+    period: "Sept 2022 - May 2026",
     logo: "/utm.png",
   },
 ];
 
 const sideProjects = [
   {
-    name: "3CommasClub NFT",
-    imageUrl: "/3commas.png",
-    alt: "3commasclub",
-    summary:
-      "NFC business card builder linked with unique NFT. Build business profile embed with NFC that allows others to scan and connect.",
-    link: "https://nextjs-3commasclub-frontend.vercel.app/",
+    name: "TextMe",
+    imageUrl: "/klusterx_player.png",
+    alt: "TextMe",
+    summary: "Online Casino Player Portal, built with NextJS, TailwindCSS and MantineUI",
     tech: [
       'NextJS',
-      "ChakraUI",
-      "Ant Design",
-      "Ant Design Pro"
+      "TailwindCSS",
+      "MantineUI",
+      "Zustand"
+    ]
+  },
+  {
+    name: "MyRecipeMate",
+    imageUrl: "/3commas.png",
+    alt: "MyRecipeMate",
+    summary:
+      "MyRecipeMate is a recipe organizer application. Users can create their own accounts to save and organize their favourite recipes from a large database of popular recipes",
+    link: "https://github.com/pratzyushd/csc207-course-project",
+    tech: [
+      'Java',
+      "Swing",
     ]
   },
   {

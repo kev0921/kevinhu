@@ -8,7 +8,7 @@ interface ISocialButton {
 
 const SocialButton: React.FC<ISocialButton> = ({ social }) => {
   return (
-    <Link href={social.url} isExternal style={{ textDecoration: "none" }}>
+    <Link href={social.href} isExternal style={{ textDecoration: "none" }}>
       <Button
         colorScheme="blue"
         size="sm"
