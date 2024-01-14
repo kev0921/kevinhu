@@ -7,6 +7,10 @@ import {
   SiTailwindcss,
   SiAntdesign,
   SiRedux,
+  SiChakraui,
+  SiMongodb,
+  SiRedis,
+  SiPusher,
 } from "react-icons/si";
 import {
   FaReact,
@@ -98,9 +102,9 @@ const techStacks = [
     url: "https://www.javascript.com/",
   },
   {
-    name: "Redux & Redux Saga",
-    icon: <SiRedux fontSize="20px" />,
-    url: "https://redux.js.org/",
+    name: "ChakraUI",
+    icon: <SiChakraui fontSize="20px" />,
+    url: "https://chakra-ui.com/",
   },
   {
     name: "TailwindCSS",
@@ -108,14 +112,14 @@ const techStacks = [
     url: "https://tailwindcss.com/",
   },
   {
-    name: "Ant Design",
-    icon: <SiAntdesign fontSize="20px" />,
-    url: "https://ant.design/",
+    name: "MongoDB",
+    icon: <SiMongodb fontSize="20px" />,
+    url: "https://www.mongodb.com/",
   },
   {
-    name: "SASS",
-    icon: <FaSass fontSize="20px" />,
-    url: "https://sass-lang.com/",
+    name: "Pusher",
+    icon: <SiPusher fontSize="20px" />,
+    url: "https://pusher.com/",
   },
 ];
 
