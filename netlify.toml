@@ -1,6 +1,6 @@
 [build]
   command = "next build"
-  publish = "out"  # This is where the production build output goes
+  publish = ".next"  # This is the default publish directory for Next.js
 
 [build.environment]
   YARN_VERSION = "latest"
