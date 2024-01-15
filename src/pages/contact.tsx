@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Container,
   SlideFade,
@@ -17,22 +17,23 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import styles from "../../styles/Home.module.css";
-import Head from "next/head";
 import ErrorMessage from "../components/ErrorMessage";
-import emailjs, { init } from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 interface IContactPage {
   emailjsServiceId: string;
   emailjsUserId: string;
+  templateId: string;
 }
 
 const ContactPage: React.FC<IContactPage> = ({
   emailjsServiceId,
   emailjsUserId,
+  templateId
 }) => {
-  init(emailjsUserId);
 
   const toast = useToast();
+  const form = useRef<HTMLFormElement | null>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,42 +48,36 @@ const ContactPage: React.FC<IContactPage> = ({
     setIsLoading(false);
   };
 
-  const handleSubmit = (e: any) => {
+  const sendEmail = (e: any) => {
     e.preventDefault();
 
     setIsLoading(true);
 
-    emailjs
-      .send(emailjsServiceId, "teo_email_template", {
-        from_name: name,
-        from_email: email,
-        message: message,
-      })
-      .then(
-        (result) => {
-          clearInput();
+    emailjs.sendForm(emailjsServiceId, templateId, form.current!, emailjsUserId)
+      .then((result) => {
+        clearInput();
 
-          toast({
-            title: "Email sent.",
-            description:
-              "You had successfully sent the email. I will reply your email ASAP. Thank you!",
-            status: "success",
-            duration: 9000,
-            isClosable: true,
-          });
-        },
-        (error) => {
-          clearInput();
+        toast({
+          title: "Email sent.",
+          description:
+            "You had successfully sent the email. I will reply your email ASAP. Thank you!",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+      },
+      (error) => {
+        clearInput();
 
-          toast({
-            title: "Email not sent.",
-            description: error.text,
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-          });
-        }
-      );
+        toast({
+          title: "Email not sent.",
+          description: error.text,
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
+    );
   };
 
   return (
@@ -105,13 +100,14 @@ const ContactPage: React.FC<IContactPage> = ({
                   Do not hesitate to contact me!
                 </Text>
                 <Box my={4} textAlign="left">
-                  <form onSubmit={handleSubmit}>
+                  <form ref={form} onSubmit={sendEmail}>
                     {error && <ErrorMessage message={error} />}
                     <FormControl isRequired>
                       <FormLabel key={"name"}>Name</FormLabel>
                       <Input
                         id="name"
-                        type={"text"}
+                        name="user_name"
+                        type="text"
                         value={name}
                         placeholder="Your Name"
                         size="lg"
@@ -123,7 +119,8 @@ const ContactPage: React.FC<IContactPage> = ({
                       <FormLabel key={"email"}>Email</FormLabel>
                       <Input
                         id="email"
-                        type={"email"}
+                        name="user_email"
+                        type="email"
                         value={email}
                         placeholder="Email"
                         size="lg"
@@ -137,6 +134,7 @@ const ContactPage: React.FC<IContactPage> = ({
                       <FormLabel key={"message"}>Message</FormLabel>
                       <Textarea
                         id="message"
+                        name="message"
                         value={message}
                         placeholder="Type your message..."
                         size="lg"
@@ -149,6 +147,7 @@ const ContactPage: React.FC<IContactPage> = ({
                     <Button
                       variant="solid"
                       type="submit"
+                      value="Send"
                       width="full"
                       // bg={useColorModeValue('gray.200', 'gray.900')}
                       mt={4}
@@ -176,6 +175,7 @@ export async function getStaticProps() {
     props: {
       emailjsServiceId: process.env.EMAILJS_SERVICE_ID,
       emailjsUserId: process.env.EMAILJS_USER_ID,
+      templateId: process.env.EMAILJS_TEMPLATE_ID,
     },
   };
 }
