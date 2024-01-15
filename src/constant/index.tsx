@@ -65,7 +65,7 @@ const siteConfig = {
         type: "gray",
       },
       {
-        url: "mailto:teowenlong0316@gmail.com",
+        url: "mailto:kevin.hu0921@gmail.com",
         icon: <SiGmail />,
         name: "Gmail",
         type: "red",
@@ -125,38 +125,40 @@ const techStacks = [
 
 const companies = [
   {
-    title: "Astro",
-    alt: "astro image",
-    url: "https://www.astro.com.my/",
-    role: "Assiociate Frontend Engineer",
-    skills: ["React", "Sass", "Redux", "Redux Saga", "StorybookJS"],
-    period: "Oct 2022 - Present",
-    logo: "/astro.png",
+    title: "Orchard Family Dentistry",
+    alt: "Orchard Family Dentistry image",
+    url: "https://orchardfamilydentistry.ca/",
+    role: "Web Developer",
+    skills: ["React", "Tailwind CSS", "JavaScript"],
+    period: "July 2023 - Present",
+    logo: "",
   },
   {
-    title: "Qumon Intelligence",
-    alt: "qumon image",
-    url: "https://www.qumonintelligence.com/",
-    role: "Software Engineer",
-    skills: [
-      "Kotlin",
-      "Java",
-      "Android",
-      "Javascript",
-      "React",
-      "React Native",
-    ],
-    period: "Aug 2020 - Sept 2022",
-    logo: "/qumon.png",
+    title: "Rotman Commerce Human Resources Association",
+    alt: "RCHRA image",
+    url: "https://www.rchumanresourcesassociation.ca/",
+    role: "Web Developer",
+    skills: ["HTML", "CSS", "JavaScript", "Bootstrap", "React"],
+    period: "November 2022 - April 2023",
+    logo: "",
   },
   {
-    title: "TimeTec Cloud Sdn Bhd",
-    alt: "timetec image",
-    url: "https://www.timeteccloud.com/",
-    role: "Mobile Application Developer Intern",
-    skills: ["Java", "Android", "C#", "Appium Automation Testing", "AWS"],
-    period: "Jul 2019 - Jan 2020",
-    logo: "/timetec.png",
+    title: "RHHS Robotics",
+    alt: "RHHS Robotics image",
+    url: "https://rhhsstuco.ca/clubs",
+    role: "General Executive",
+    skills: ["Arduino, C++"],
+    period: "October 2021 - April 2022",
+    logo: "",
+  },
+  {
+    title: "Trillium Woods",
+    alt: "TWPS image",
+    url: "http://www.yrdsb.ca/schools/trilliumwoods.ps/Pages/default.aspx",
+    role: "Volunteer",
+    skills: ["Communication, Leadership, Team Work, Organization"],
+    period: "September 2018 - February 2019",
+    logo: "",
   },
 ];
 
@@ -168,29 +170,34 @@ const educations = [
     role: "Bachelor's Degree in Computer Science",
     skills: ["CGPA - 3.74", "Data Structures & Algorithms", "Software Design", "Object Oriented Programming", "Operating Systems", ],
     period: "Sept 2022 - May 2026",
-    logo: "/utm.png",
+    logo: "",
   },
 ];
 
 const sideProjects = [
   {
     name: "TextMe",
-    imageUrl: "/klusterx_player.png",
+    imageUrl: "",
     alt: "TextMe",
-    summary: "Online Casino Player Portal, built with NextJS, TailwindCSS and MantineUI",
+    summary: "TextMe is a full stack chat app. Users can create their own account using their google account, add friends, and chat in real time with their friends.",
+    link: "https://github.com/kev0921/text-me",
     tech: [
-      'NextJS',
-      "TailwindCSS",
-      "MantineUI",
-      "Zustand"
+      'TypeScript',
+      "Upstash Redis",
+      "React",
+      "Next.js",
+      "Node.js",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Pusher",
     ]
   },
   {
     name: "MyRecipeMate",
-    imageUrl: "/3commas.png",
+    imageUrl: "",
     alt: "MyRecipeMate",
     summary:
-      "MyRecipeMate is a recipe organizer application. Users can create their own accounts to save and organize their favourite recipes from a large database of popular recipes",
+      "MyRecipeMate is a recipe organizer application. Users can create their own accounts to save and organize recipes from a large database of popular recipes",
     link: "https://github.com/pratzyushd/csc207-course-project",
     tech: [
       'Java',
@@ -198,54 +205,69 @@ const sideProjects = [
     ]
   },
   {
-    name: "KlusterX Player Portal",
-    imageUrl: "/klusterx_player.png",
-    alt: "klusterx",
-    summary: "Online Casino Player Portal, built with NextJS, TailwindCSS and MantineUI",
+    name: "Dental Clinic Website",
+    imageUrl: "",
+    alt: "Dental Clinic Website",
+    summary: "This is the website I created with a team of web developers for the Orchard Family Dentistry clinic. This website allows patients to book dental appointments, learn more about dental treatments, and more.",
+    link: "https://github.com/kev0921/orchard-family-dentistry-website",
     tech: [
-      'NextJS',
-      "TailwindCSS",
-      "MantineUI",
-      "Zustand"
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
     ]
   },
   {
-    name: "KlusterX Tenant Portal",
-    imageUrl: "/klusterx_tenant.png",
-    alt: "klusterx",
-    summary: "Online Casino Tenant Portal, built with Ant Design Pro",
+    name: "HomeworkPal",
+    imageUrl: "",
+    alt: "HomeworkPal",
+    summary: "HomeworkPal is a homework task tracker. It allows users to create their own accounts and save and create their own tasks and track the completion of those tasks.",
+    link: "https://github.com/kev0921/Homework-Pal",
     tech: [
-      "UmiJS",
-      "Ant Design",
-      "Ant Design Pro"
+      'TypeScript',
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "ChakraUI",
     ]
   },
   {
-    name: "Chativo",
-    imageUrl: "https://play-lh.googleusercontent.com/tgLiP-ZL-sBuZt2RzDU1tN88Cp7NPbdjF7c0311_dui86f1HrAQM0j4gXaRE0pb5zW0=s360-rw",
-    alt: "chativo",
-    summary: "Enterprise ready live-chat base customer support & engagement software",
+    name: "MelodyMatch",
+    imageUrl: "",
+    alt: "MelodyMatch",
+    summary: "MelodyMatch is a Spotify song recommendation app. Connect your spotify account to our app and, with a click of a button, generate a list of songs that are taylored to your preferences.",
+    link: "https://github.com/Manal-jpg/csc111-group-project",
     tech: [
-      "Android",
-      "Kotlin",
-      "Android Jetpack",
-      "Coroutine Flow",
-    ],
-    link: "https://play.google.com/store/apps/details?id=io.chativo.chat"
+      "Python",
+      "Spotipy",
+      "Tkinter",
+      "Bottle",
+    ]
   },
   {
-    name: "ChativoV",
-    imageUrl: "https://play-lh.googleusercontent.com/5U5s7sSIuzP6CygPkU2ZYxyOXT-MKv7oiyweGKHgkEgVameOcYt44rnXqCTWZJNZgVqn=s360-rw",
-    alt: "chativo-v",
-    summary: "Live-chat specifically designed for visitors to communicate with real-time agent instantly",
+    name: "Club Website",
+    imageUrl: "",
+    alt: "Club Website",
+    summary: "This is the website I created with a team of web developers for the RCHRA club at UofT. This website provides information on upcoming club events, infromation about the club, and more.",
+    link: "https://github.com/jaeyonglee3/RCHRA-Website",
     tech: [
-      "React Native",
       "Javascript",
-      "Redux",
-      "Redux Saga",
-      "RealmJS"
-    ],
-    link: "https://play.google.com/store/apps/details?id=io.chativo.visitor"
+      "Bootstrap",
+      "CSS",
+      "HTML",
+      "React",
+    ]
+  },
+  {
+    name: "Maze Solver Robot",
+    imageUrl: "",
+    alt: "Maze Solver Robot",
+    summary: "Using Arduino robot parts and the Arduino IDE, I created a robot that is able to solve simple mazes using data gathered by its ultrasonic sensor.",
+    // ADD A THE CODE FOR THE MAZE SOLVER ROBOT TO A GITHUB REPO AND ADD THE GITHUB LINK HERE
+    tech: [
+      "C++",
+      "Arduino",
+    ]
   },
 ];
 
