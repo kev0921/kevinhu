@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Divider } from "@chakra-ui/react";
-import Head from "next/head";
+import { Container } from "@chakra-ui/react";
 import getGithubRepos from "../constant/getGithubRepos";
 import styles from "../../styles/Home.module.css";
 import GithubSection from "../components/section/GithubSection";

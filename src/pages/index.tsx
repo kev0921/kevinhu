@@ -1,10 +1,7 @@
 import { Container, Divider } from "@chakra-ui/react";
 import ProfileSection from "../components/section/ProfileSection";
 import TechStackSection from "../components/section/TechStackSection";
-import styles from "../../styles/Home.module.css";
 import useSWR from "swr";
-import Meta from "../components/Meta";
-import { SideProjectSection } from "../components/section/SideProjectSection";
 
 export default function Home() {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());

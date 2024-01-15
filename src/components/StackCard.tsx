@@ -1,10 +1,8 @@
 import React from "react";
 import {
   LinkBox,
-  Box,
   IconButton,
   LinkOverlay,
-  Heading,
   Text,
   useColorModeValue,
   Flex,
