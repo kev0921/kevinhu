@@ -1,11 +1,14 @@
 {
+  "homepage": "http://kev0921.github.io/kevinhu.github.io",
   "name": "teo-nextjs-portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
