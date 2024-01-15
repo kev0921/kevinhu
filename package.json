@@ -22,7 +22,7 @@
     "chakra": "^0.0.3",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^5.6.0",
+    "framer-motion": "^10.18.0",
     "moment": "^2.29.1",
     "next": "13.0.6",
     "querystring": "^0.2.1",
