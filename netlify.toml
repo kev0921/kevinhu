@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "dist"  # Adjust this if your build output directory is different
+  command = "next build"
+  publish = "out"  # This is where the production build output goes
 
 [build.environment]
   YARN_VERSION = "latest"
