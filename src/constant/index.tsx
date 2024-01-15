@@ -1,28 +1,16 @@
 import {
-  SiKotlin,
-  SiFirebase,
-  SiFastlane,
   SiGmail,
   SiTypescript,
   SiTailwindcss,
-  SiAntdesign,
-  SiRedux,
   SiChakraui,
   SiMongodb,
-  SiRedis,
   SiPusher,
 } from "react-icons/si";
 import {
   FaReact,
   FaJs,
-  FaGitAlt,
-  FaAndroid,
-  FaJava,
   FaLinkedin,
-  FaStackOverflow,
-  FaMedium,
   FaGithub,
-  FaSass,
   FaInstagram,
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
