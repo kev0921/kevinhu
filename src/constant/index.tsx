@@ -23,6 +23,7 @@ import {
   FaMedium,
   FaGithub,
   FaSass,
+  FaInstagram,
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -41,28 +42,22 @@ const siteConfig = {
     name: "Kevin Hu",
     accounts: [
       {
-        url: "https://github.com/WenLonG12345",
+        url: "https://github.com/kev0921",
         icon: <FaGithub />,
         name: "Github",
         type: "gray",
       },
       {
-        url: "https://www.linkedin.com/in/teo-wen-long-19960316/",
+        url: "https://www.linkedin.com/in/kevinhu04/",
         icon: <FaLinkedin />,
         name: "Linkedin",
         type: "linkedin",
       },
       {
-        url: "https://stackoverflow.com/users/12261890/teo",
-        icon: <FaStackOverflow />,
-        name: "StackOverflow",
-        type: "orange",
-      },
-      {
-        url: "https://skynight1996.medium.com/",
-        icon: <FaMedium />,
-        name: "Medium",
-        type: "gray",
+        url: "https://www.instagram.com/kevinhu04/",
+        icon: <FaInstagram />,
+        name: "Instagram",
+        type: "pink",
       },
       {
         url: "mailto:kevin.hu0921@gmail.com",
