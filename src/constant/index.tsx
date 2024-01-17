@@ -178,7 +178,7 @@ const sideProjects = [
   },
   {
     name: "MyRecipeMate",
-    imageUrl: "",
+    imageUrl: "/MyRecipeMate.png",
     alt: "MyRecipeMate",
     summary:
       "MyRecipeMate is a recipe organizer application. Users can create their own accounts to save and organize recipes from a large database of popular recipes",
