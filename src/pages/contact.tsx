@@ -45,7 +45,7 @@ const contact1 = () => {
     const templateId = process.env.EMAILJS_TEMPLATE_ID as string
     const emailjsUserId = process.env.EMAILJS_USER_ID as string
 
-    emailjs.sendForm(emailjsServiceId!, templateId, form.current!, emailjsUserId)
+    emailjs.sendForm(emailjsServiceId, templateId, form.current!, emailjsUserId)
       .then((result) => {
         clearInput();
 
