@@ -11,7 +11,7 @@ const NextDocument = () => {
         {/* <!-- Primary Meta Tags --> */}
         <meta name="title" content="Kevin"></meta>
         <meta name="description" content="Kevin | Software Engineer"></meta>
-        <meta name="keywords" content="React, Android, Javascript, Kotlin, Java, SCSS, Redux"></meta>
+        <meta name="keywords" content="React, Next.js, Javascript, Python, Java, TailwindCSS, MongoDB"></meta>
 
         {/* PWA */}
         <meta name="application-name" content="Kevin" />
