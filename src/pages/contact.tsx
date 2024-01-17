@@ -18,14 +18,20 @@ import styles from "../../styles/Home.module.css";
 import ErrorMessage from "../components/ErrorMessage";
 import emailjs from "@emailjs/browser";
 
+interface IContactPage {
+  emailjsServiceId: string;
+  emailjsUserId: string;
+  templateId: string;
+}
 
-const contact1 = () => {
+const ContactPage: React.FC<IContactPage> = ({
+  emailjsServiceId,
+  emailjsUserId,
+  templateId
+}) => {
+
   const toast = useToast();
   const form = useRef<HTMLFormElement | null>(null);
-  
-  const emailjsServiceId = process.env.EMAILJS_SERVICE_ID as string
-  const templateId = process.env.EMAILJS_TEMPLATE_ID as string
-  const emailjsUserId = process.env.EMAILJS_USER_ID as string
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -73,16 +79,8 @@ const contact1 = () => {
   };
 
   return (
-    // <form ref={form} onSubmit={sendEmail}>
-    //   <label>Name</label>
-    //   <input type="text" name="user_name" />
-    //   <label>Email</label>
-    //   <input type="email" name="user_email" />
-    //   <label>Message</label>
-    //   <textarea name="message" />
-    //   <input type="submit" value="Send" />
-    // </form>
-    <main>
+    <div className={styles.container}>
+      <main>
         <Container maxW="container.lg" mt={["5", "10"]} mb={["5", "10"]}>
           <SlideFade in offsetY={80}>
             <Flex width="full" align="center" justifyContent="center">
@@ -164,7 +162,18 @@ const contact1 = () => {
           </SlideFade>
         </Container>
       </main>
+    </div>
   );
 };
 
-export default contact1;
+export default ContactPage;
+
+export async function getStaticProps() {
+  return {
+    props: {
+      emailjsServiceId: process.env.EMAILJS_SERVICE_ID,
+      emailjsUserId: process.env.EMAILJS_USER_ID,
+      templateId: process.env.EMAILJS_TEMPLATE_ID,
+    },
+  };
+}
