@@ -27,12 +27,15 @@ const getAccessToken = async () => {
     return response.json();
 };
 
-export const getNowPlaying = async () => {
+const getNowPlaying = async () => {
     const { access_token } = await getAccessToken();
 
     return fetch(NOW_PLAYING_ENDPOINT, {
+        method: 'GET', // Explicitly specify the method
         headers: {
             Authorization: `Bearer ${access_token}`,
+            'Content-Type': 'application/json', // Add content type
+            'Accept': 'application/json', // Specify accepted response type
         },
     });
 };
