@@ -216,6 +216,21 @@ const sideProjects = [
     ]
   },
   {
+    name: "Portfolio Website",
+    imageUrl: "/PortfolioWebsite.png",
+    alt: "Portfolio Website",
+    summary: "My portfolio website where I illustrate all my projects, work experiences, and some cool information about myself",
+    link: "https://github.com/kev0921/portfolio",
+    tech: [
+      'TypeScript',
+      "Next.js",
+      "React",
+      "ChakraUI",
+      "Spotify API",
+      "Github API",
+    ]
+  },
+  {
     name: "MelodyMatch",
     imageUrl: "/MelodyMatch.png",
     alt: "MelodyMatch",
