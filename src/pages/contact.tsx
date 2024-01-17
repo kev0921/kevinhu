@@ -22,6 +22,10 @@ import emailjs from "@emailjs/browser";
 const contact1 = () => {
   const toast = useToast();
   const form = useRef<HTMLFormElement | null>(null);
+  
+  const emailjsServiceId = process.env.EMAILJS_SERVICE_ID as string
+  const templateId = process.env.EMAILJS_TEMPLATE_ID as string
+  const emailjsUserId = process.env.EMAILJS_USER_ID as string
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,10 +44,6 @@ const contact1 = () => {
     e.preventDefault();
 
     setIsLoading(true);
-
-    const emailjsServiceId = process.env.EMAILJS_SERVICE_ID as string
-    const templateId = process.env.EMAILJS_TEMPLATE_ID as string
-    const emailjsUserId = process.env.EMAILJS_USER_ID as string
 
     emailjs.sendForm(emailjsServiceId, templateId, form.current!, emailjsUserId)
       .then((result) => {
