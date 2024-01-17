@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
 import { TbBrandNextjs } from "react-icons/tb";
+import uoftLogo from "../../public/uoftLogo.png"
 
 const menuLinks = [
   { name: "About Me", route: "/" },
@@ -114,7 +115,7 @@ const companies = [
     role: "Web Developer",
     skills: ["React", "Tailwind CSS", "JavaScript"],
     period: "July 2023 - Present",
-    logo: "",
+    logo: "/OrchardFamilyDentistryLogo.png",
   },
   {
     title: "Rotman Commerce Human Resources Association",
@@ -123,7 +124,7 @@ const companies = [
     role: "Web Developer",
     skills: ["HTML", "CSS", "JavaScript", "Bootstrap", "React"],
     period: "November 2022 - April 2023",
-    logo: "",
+    logo: "/uoftLogo.png",
   },
   {
     title: "RHHS Robotics",
@@ -132,7 +133,7 @@ const companies = [
     role: "General Executive",
     skills: ["Arduino, C++"],
     period: "October 2021 - April 2022",
-    logo: "",
+    logo: "/rhhsRobotics.png",
   },
   {
     title: "Trillium Woods",
@@ -141,7 +142,7 @@ const companies = [
     role: "Volunteer",
     skills: ["Communication, Leadership, Team Work, Organization"],
     period: "September 2018 - February 2019",
-    logo: "",
+    logo: "/yrdsbLogo.png",
   },
 ];
 
@@ -153,7 +154,7 @@ const educations = [
     role: "Bachelor's Degree in Computer Science",
     skills: ["CGPA - 3.74", "Data Structures & Algorithms", "Software Design", "Object Oriented Programming", "Operating Systems", ],
     period: "Sept 2022 - May 2026",
-    logo: "",
+    logo: "/uoftLogo.png",
   },
 ];
 
@@ -189,7 +190,7 @@ const sideProjects = [
   },
   {
     name: "Dental Clinic Website",
-    imageUrl: "",
+    imageUrl: "/DentistWebsite.png",
     alt: "Dental Clinic Website",
     summary: "This is the website I created with a team of web developers for the Orchard Family Dentistry clinic. This website allows patients to book dental appointments, learn more about dental treatments, and more.",
     link: "https://github.com/kev0921/orchard-family-dentistry-website",
@@ -216,7 +217,7 @@ const sideProjects = [
   },
   {
     name: "MelodyMatch",
-    imageUrl: "",
+    imageUrl: "/MelodyMatch.png",
     alt: "MelodyMatch",
     summary: "MelodyMatch is a Spotify song recommendation app. Connect your spotify account to our app and, with a click of a button, generate a list of songs that are taylored to your preferences.",
     link: "https://github.com/Manal-jpg/csc111-group-project",
@@ -229,7 +230,7 @@ const sideProjects = [
   },
   {
     name: "Club Website",
-    imageUrl: "",
+    imageUrl: "/ClubWebsite.png",
     alt: "Club Website",
     summary: "This is the website I created with a team of web developers for the RCHRA club at UofT. This website provides information on upcoming club events, infromation about the club, and more.",
     link: "https://github.com/jaeyonglee3/RCHRA-Website",
@@ -243,7 +244,7 @@ const sideProjects = [
   },
   {
     name: "Maze Solver Robot",
-    imageUrl: "",
+    imageUrl: "/MazeSolverRobot.png",
     alt: "Maze Solver Robot",
     summary: "Using Arduino robot parts and the Arduino IDE, I created a robot that is able to solve simple mazes using data gathered by its ultrasonic sensor.",
     // ADD A THE CODE FOR THE MAZE SOLVER ROBOT TO A GITHUB REPO AND ADD THE GITHUB LINK HERE
