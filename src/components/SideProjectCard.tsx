@@ -27,7 +27,6 @@ export const SideProjectCard: React.FC<ISideProjectCard> = ({ project }) => (
         mx={5}
         overflow={"hidden"}
         minH="26rem" // Set a fixed minimum height for the cards
-        maxH="26rem"
         _hover={{ cursor: "pointer" }}
         display="flex" // Use Flexbox
         flexDirection="column" // Stack elements vertically
