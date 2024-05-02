@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import styles from "../../styles/Home.module.css";
 import ErrorMessage from "../components/ErrorMessage";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
 interface IContactPage {
   emailjsServiceId: string;
