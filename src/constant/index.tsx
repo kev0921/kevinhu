@@ -160,8 +160,18 @@ const educations = [
 
 const sideProjects = [
   {
+    name: "CSCShell",
+    imageUrl: "/CSCShell.png",
+    alt: "CSCShell",
+    summary: "CSCShell is a shell similar to POSIX sh and BASH. It supports common functions such as comments, variable assignment and usage, script execution, cd commanbd, using system calls to start executables, file redirection, piping, and more.",
+    link: "https://github.com/kev0921/CSCShell",
+    tech: [
+      'C',
+    ]
+  },
+  {
     name: "TextMe",
-    imageUrl: "",  // add image!!!!!!!!!
+    imageUrl: "/text-me.png", 
     alt: "TextMe",
     summary: "TextMe is a full stack chat app. Users can create their own account using their google account, add friends, and chat in real time with their friends.",
     link: "https://github.com/kev0921/text-me",
@@ -202,7 +212,7 @@ const sideProjects = [
   },
   {
     name: "HomeworkPal",
-    imageUrl: "",  // add image!!!!!!!!!
+    imageUrl: "/HomeworkPal.png",
     alt: "HomeworkPal",
     summary: "HomeworkPal is a homework task tracker. It allows users to create their own accounts and save and create their own tasks and track the completion of those tasks.",
     link: "https://github.com/kev0921/Homework-Pal",
