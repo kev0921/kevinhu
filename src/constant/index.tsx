@@ -15,7 +15,6 @@ import {
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
 import { TbBrandNextjs } from "react-icons/tb";
-import uoftLogo from "../../public/uoftLogo.png"
 
 const menuLinks = [
   { name: "About Me", route: "/" },
