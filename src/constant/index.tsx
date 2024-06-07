@@ -5,6 +5,9 @@ import {
   SiChakraui,
   SiMongodb,
   SiPusher,
+  SiTensorflow,
+  SiExpress,
+  SiFlask,
 } from "react-icons/si";
 import {
   FaReact,
@@ -12,6 +15,7 @@ import {
   FaLinkedin,
   FaGithub,
   FaInstagram,
+  FaFlask,
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -48,7 +52,7 @@ const siteConfig = {
         type: "pink",
       },
       {
-        url: "mailto:kevin.hu0921@gmail.com",
+        url: "mailto:kevinh.hu@mail.utoronto.ca",
         icon: <SiGmail />,
         name: "Gmail",
         type: "red",
@@ -67,7 +71,7 @@ const techStacks = [
   {
     name: "React",
     icon: <FaReact fontSize="20px" />,
-    url: "https://reactnative.dev/",
+    url: "https://react.dev/",
   },
   {
     name: "NextJS",
@@ -75,19 +79,19 @@ const techStacks = [
     url: "https://nextjs.org/",
   },
   {
-    name: "Typescript",
-    icon: <SiTypescript fontSize="20px" />,
-    url: "https://www.typescriptlang.org/",
+    name: "Express",
+    icon: <SiExpress fontSize="20px" />,
+    url: "https://expressjs.com/",
   },
   {
-    name: "Javascript",
-    icon: <FaJs fontSize="20px" />,
-    url: "https://www.javascript.com/",
+    name: "Flask",
+    icon: <SiFlask fontSize="20px" />,
+    url: "https://flask.palletsprojects.com/en/3.0.x/",
   },
   {
-    name: "ChakraUI",
-    icon: <SiChakraui fontSize="20px" />,
-    url: "https://chakra-ui.com/",
+    name: "TensorFlow",
+    icon: <SiTensorflow fontSize="20px" />,
+    url: "https://www.tensorflow.org/",
   },
   {
     name: "TailwindCSS",
