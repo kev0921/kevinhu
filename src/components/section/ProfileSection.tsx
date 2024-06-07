@@ -60,10 +60,10 @@ const ProfileSection: React.FC<IProfileSection> = ({ song }) => {
         </MotionFlex>
       </MotionFlex>
       <Paragraph textProps={{ fontSize: "2xl", lineHeight: 1.6 }}>
-      Your friendly neighbourhood software developer and student from UofT. 
+      As a relatively new software developer, I spend my days exploring new technologies and frameworks to learn on top of fulfilling my student responsibilities. 
       </Paragraph>
       <Paragraph textProps={{ fontSize: "2xl", lineHeight: 1.6 }}>
-      As a relatively new software developer, I spend my days exploring new technologies and frameworks to learn on top of fulfilling my student responsibilities. 
+      In my free time, I enjoy playing basketball, running, listening to music, and hanging out with my friends. You can see what song I am currently listening to below! 
       </Paragraph>
 
       <Box mt={5}>
