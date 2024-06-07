@@ -159,6 +159,19 @@ const educations = [
 
 const sideProjects = [
   {
+    name: "GoodEats",
+    imageUrl: "/GoodEats.png",
+    alt: "GoodEats",
+    summary: "GoodEats is an application that can determine the freshness of a fruit. It uses your device's camera to take a picture of the fruit and uses a machine learning model to determine the freshness of the fruit.",
+    link: "https://github.com/kev0921/GoodEats",
+    tech: [
+      'Python',
+      'Flask',
+      'TensorFlow',
+      'React',
+    ]
+  },
+  {
     name: "CSCShell",
     imageUrl: "/CSCShell.png",
     alt: "CSCShell",

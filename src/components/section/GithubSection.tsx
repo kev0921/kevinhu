@@ -24,7 +24,7 @@ const GithubSection: React.FC<IGithubSection> = ({ repos }) => {
       <Paragraph>
         <Text>List of my top featured github repositories. 🔖</Text>
         <Text>
-          Feel free to pay a visit and don't forget to leave me a star! ⭐{" "}
+          Feel free to pay a visit!{" "}
         </Text>
       </Paragraph>
       <Box my={5}>
