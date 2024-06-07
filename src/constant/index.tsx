@@ -74,6 +74,16 @@ const techStacks = [
     url: "https://react.dev/",
   },
   {
+    name: "TensorFlow",
+    icon: <SiTensorflow fontSize="20px" />,
+    url: "https://www.tensorflow.org/",
+  },
+  {
+    name: "Flask",
+    icon: <SiFlask fontSize="20px" />,
+    url: "https://flask.palletsprojects.com/en/3.0.x/",
+  },
+  {
     name: "NextJS",
     icon: <TbBrandNextjs fontSize="20px" />,
     url: "https://nextjs.org/",
@@ -82,16 +92,6 @@ const techStacks = [
     name: "Express",
     icon: <SiExpress fontSize="20px" />,
     url: "https://expressjs.com/",
-  },
-  {
-    name: "Flask",
-    icon: <SiFlask fontSize="20px" />,
-    url: "https://flask.palletsprojects.com/en/3.0.x/",
-  },
-  {
-    name: "TensorFlow",
-    icon: <SiTensorflow fontSize="20px" />,
-    url: "https://www.tensorflow.org/",
   },
   {
     name: "TailwindCSS",
@@ -115,7 +115,7 @@ const companies = [
     title: "Orchard Family Dentistry",
     alt: "Orchard Family Dentistry image",
     url: "https://orchardfamilydentistry.ca/",
-    role: "Web Developer",
+    role: "Software Developer",
     skills: ["React", "Tailwind CSS", "JavaScript"],
     period: "July 2023 - Present",
     logo: "/OrchardFamilyDentistryLogo.png",
