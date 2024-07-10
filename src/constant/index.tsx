@@ -155,7 +155,7 @@ const educations = [
     alt: "utsg image",
     url: "https://www.utoronto.ca/",
     role: "Bachelor's Degree in Computer Science",
-    skills: ["Data Structures & Algorithms", "Software Design", "OOP", "Software Tools and Systems Programming"],
+    skills: ["Data Structures & Algorithms", "Software Design", "OOP", "Software Tools and Systems Programming", "ASIP"],
     period: "Sept 2022 - May 2026",
     logo: "/uoftLogo.png",
   },
