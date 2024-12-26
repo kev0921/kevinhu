@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kevinhu04.netlify.app/
+
+# Sitemaps
+Sitemap: https://kevinhu04.netlify.app/sitemap.xml
