@@ -8,6 +8,7 @@ import {
   SiTensorflow,
   SiExpress,
   SiFlask,
+  SiPostgresql,
 } from "react-icons/si";
 import {
   FaReact,
@@ -89,9 +90,9 @@ const techStacks = [
     url: "https://nextjs.org/",
   },
   {
-    name: "Express",
-    icon: <SiExpress fontSize="20px" />,
-    url: "https://expressjs.com/",
+    name: "Typescript",
+    icon: <SiTypescript fontSize="20px" />,
+    url: "https://www.typescriptlang.org/",
   },
   {
     name: "TailwindCSS",
@@ -104,20 +105,55 @@ const techStacks = [
     url: "https://www.mongodb.com/",
   },
   {
-    name: "Pusher",
-    icon: <SiPusher fontSize="20px" />,
-    url: "https://pusher.com/",
+    name: "PostgreSQL",
+    icon: <SiPostgresql fontSize="20px" />,
+    url: "https://www.postgresql.org/",
   },
 ];
 
 const companies = [
   {
+    title: "Mengalo",
+    alt: "Mengalo image",
+    url: "https://www.mengalo.com/",
+    role: "Full Stack Developer",
+    skills: [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "PostgreSQL",
+      "Node.js",
+      "Express",
+      "Jest",
+      "Git",
+    ],
+    period: "September 2024 - Present",
+    logo: "/mengaloLogo.png",
+  },
+  {
+    title: "Digital Cloud Service Pte. Ltd.",
+    alt: "Digital Cloud Service image",
+    url: "http://www.cloud-service.com.cn/",
+    role: "Software Developer Intern",
+    skills: [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Vue",
+      "Ant Design",
+      "Swagger UI",
+      "Git",
+    ],
+    period: "June 2024 - August 2024",
+    logo: "/digitalCloudServiceLogo.png",
+  },
+  {
     title: "Orchard Family Dentistry",
     alt: "Orchard Family Dentistry image",
     url: "https://orchardfamilydentistry.ca/",
     role: "Software Developer",
-    skills: ["React", "Tailwind CSS", "JavaScript"],
-    period: "July 2023 - Present",
+    skills: ["React", "Tailwind CSS", "JavaScript", "Git"],
+    period: "July 2023 - March 2024",
     logo: "/OrchardFamilyDentistryLogo.png",
   },
   {
@@ -125,7 +161,7 @@ const companies = [
     alt: "RCHRA image",
     url: "https://www.rchumanresourcesassociation.ca/",
     role: "Web Developer",
-    skills: ["HTML", "CSS", "JavaScript", "Bootstrap", "React"],
+    skills: ["HTML", "CSS", "JavaScript", "Bootstrap", "React", "Git"],
     period: "November 2022 - April 2023",
     logo: "/uoftLogo.png",
   },
@@ -155,44 +191,72 @@ const educations = [
     alt: "utsg image",
     url: "https://www.utoronto.ca/",
     role: "Bachelor's Degree in Computer Science",
-    skills: ["Data Structures & Algorithms", "Software Design", "OOP", "Software Tools and Systems Programming", "ASIP"],
-    period: "Sept 2022 - May 2026",
+    skills: [
+      "Data Structures & Algorithms",
+      "Software Design",
+      "OOP",
+      "Software Tools and Systems Programming",
+      "ASIP",
+    ],
+    period: "Sept 2022 - May 2027",
     logo: "/uoftLogo.png",
   },
 ];
 
 const sideProjects = [
   {
+    name: "Caspr",
+    imageUrl: "/Caspr1.jpg",
+    alt: "Caspr",
+    summary:
+      "Caspr (Causal Analysis and Structure Path Relationships) is a web application that empowers users to explore complex causal diagrams in an intuitive 3D environment.",
+    link: "https://caspr.vercel.app/",
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "Three.js",
+      "Tailwind CSS",
+      "Jest",
+    ],
+  },
+  {
     name: "GoodEats",
     imageUrl: "/GoodEats.png",
     alt: "GoodEats",
-    summary: "GoodEats is an application that can determine the freshness of a fruit. It uses your device's camera to take a picture of the fruit and uses a machine learning model to determine the freshness of the fruit.",
+    summary:
+      "GoodEats is an application that can determine the freshness of a fruit. It uses your device's camera to take a picture of the fruit and uses a machine learning model to determine the freshness of the fruit.",
     link: "https://github.com/kev0921/GoodEats",
-    tech: [
-      'Python',
-      'Flask',
-      'TensorFlow',
-      'React',
-    ]
+    tech: ["Python", "Flask", "TensorFlow", "React"],
+  },
+  {
+    name: "MyAudiobook",
+    imageUrl: "/MyAudiobook.png",
+    alt: "MyAudiobook",
+    summary:
+      "MyAudiobook enables users to easily convert text into audio. Users can type in or paste any text—whether it's from online articles, academic papers, or personal notes—and save it as a custom Audiobook object with a title of their choice.",
+    link: "https://github.com/kev0921/MyAudiobook",
+    tech: ["React", "Tailwind CSS", "MongoDB", "Express", "Node.js", "OpenAI"],
   },
   {
     name: "CSCShell",
     imageUrl: "/CSCShell.png",
     alt: "CSCShell",
-    summary: "CSCShell is a shell similar to POSIX sh and BASH. It supports common functions such as comments, variable assignment and usage, script execution, cd commanbd, using system calls to start executables, file redirection, piping, and more.",
+    summary:
+      "CSCShell is a shell similar to POSIX sh and BASH. It supports common functions such as comments, variable assignment and usage, script execution, cd commanbd, using system calls to start executables, file redirection, piping, and more.",
     link: "https://github.com/kev0921/CSCShell",
-    tech: [
-      'C',
-    ]
+    tech: ["C"],
   },
   {
     name: "TextMe",
-    imageUrl: "/text-me.png", 
+    imageUrl: "/text-me.png",
     alt: "TextMe",
-    summary: "TextMe is a full stack chat app. Users can create their own account using their google account, add friends, and chat in real time with their friends.",
+    summary:
+      "TextMe is a full stack chat app. Users can create their own account using their google account, add friends, and chat in real time with their friends.",
     link: "https://github.com/kev0921/text-me",
     tech: [
-      'TypeScript',
+      "TypeScript",
       "Upstash Redis",
       "React",
       "Next.js",
@@ -200,7 +264,7 @@ const sideProjects = [
       "NextAuth.js",
       "Tailwind CSS",
       "Pusher",
-    ]
+    ],
   },
   {
     name: "MyRecipeMate",
@@ -209,90 +273,68 @@ const sideProjects = [
     summary:
       "MyRecipeMate is a recipe organizer application. Users can create their own accounts to save and organize recipes from a large database of popular recipes",
     link: "https://github.com/pratzyushd/csc207-course-project",
-    tech: [
-      'Java',
-      "Swing",
-    ]
-  },
-  {
-    name: "Dental Clinic Website",
-    imageUrl: "/DentistWebsite.png",
-    alt: "Dental Clinic Website",
-    summary: "This is the website I created with a team of web developers for the Orchard Family Dentistry clinic. This website allows patients to book dental appointments, learn more about dental treatments, and more.",
-    link: "https://github.com/kev0921/orchard-family-dentistry-website",
-    tech: [
-      "React",
-      "Tailwind CSS",
-      "JavaScript",
-    ]
-  },
-  {
-    name: "HomeworkPal",
-    imageUrl: "/HomeworkPal.png",
-    alt: "HomeworkPal",
-    summary: "HomeworkPal is a homework task tracker. It allows users to create their own accounts and save and create their own tasks and track the completion of those tasks.",
-    link: "https://github.com/kev0921/Homework-Pal",
-    tech: [
-      'TypeScript',
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "ChakraUI",
-    ]
-  },
-  {
-    name: "Portfolio Website",
-    imageUrl: "/PortfolioWebsite.png",
-    alt: "Portfolio Website",
-    summary: "My portfolio website where I illustrate all my projects, work experiences, and some cool information about myself",
-    link: "https://github.com/kev0921/portfolio",
-    tech: [
-      'TypeScript',
-      "Next.js",
-      "React",
-      "ChakraUI",
-      "Spotify API",
-      "Github API",
-    ]
+    tech: ["Java", "Swing"],
   },
   {
     name: "MelodyMatch",
     imageUrl: "/MelodyMatch.png",
     alt: "MelodyMatch",
-    summary: "MelodyMatch is a Spotify song recommendation app. Connect your spotify account to our app and, with a click of a button, generate a list of songs that are taylored to your preferences.",
+    summary:
+      "MelodyMatch is a Spotify song recommendation app. Connect your spotify account to our app and, with a click of a button, generate a list of songs that are taylored to your preferences.",
     link: "https://github.com/Manal-jpg/csc111-group-project",
+    tech: ["Python", "Spotipy", "Tkinter", "Bottle"],
+  },
+  {
+    name: "Dental Clinic Website",
+    imageUrl: "/DentistWebsite.png",
+    alt: "Dental Clinic Website",
+    summary:
+      "This is the website I created with a team of web developers for the Orchard Family Dentistry clinic. This website allows patients to book dental appointments, learn more about dental treatments, and more.",
+    link: "https://github.com/kev0921/orchard-family-dentistry-website",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+  },
+  {
+    name: "HomeworkPal",
+    imageUrl: "/HomeworkPal.png",
+    alt: "HomeworkPal",
+    summary:
+      "HomeworkPal is a homework task tracker. It allows users to create their own accounts and save and create their own tasks and track the completion of those tasks.",
+    link: "https://github.com/kev0921/Homework-Pal",
+    tech: ["TypeScript", "MongoDB", "Express", "React", "Node.js", "ChakraUI"],
+  },
+  {
+    name: "Portfolio Website",
+    imageUrl: "/PortfolioWebsite.png",
+    alt: "Portfolio Website",
+    summary:
+      "My portfolio website where I illustrate all my projects, work experiences, and some cool information about myself",
+    link: "https://github.com/kev0921/portfolio",
     tech: [
-      "Python",
-      "Spotipy",
-      "Tkinter",
-      "Bottle",
-    ]
+      "TypeScript",
+      "Next.js",
+      "React",
+      "ChakraUI",
+      "Spotify API",
+      "Github API",
+    ],
   },
   {
     name: "Club Website",
     imageUrl: "/ClubWebsite.png",
     alt: "Club Website",
-    summary: "This is the website I created with a team of web developers for the RCHRA club at UofT. This website provides information on upcoming club events, infromation about the club, and more.",
+    summary:
+      "This is the website I created with a team of web developers for the RCHRA club at UofT. This website provides information on upcoming club events, infromation about the club, and more.",
     link: "https://github.com/jaeyonglee3/RCHRA-Website",
-    tech: [
-      "Javascript",
-      "Bootstrap",
-      "CSS",
-      "HTML",
-      "React",
-    ]
+    tech: ["Javascript", "Bootstrap", "CSS", "HTML", "React"],
   },
   {
     name: "Maze Solver Robot",
     imageUrl: "/MazeSolverRobot.png",
     alt: "Maze Solver Robot",
-    summary: "Using Arduino robot parts and the Arduino IDE, I created a robot that is able to solve simple mazes using data gathered by its ultrasonic sensor.",
+    summary:
+      "Using Arduino robot parts and the Arduino IDE, I created a robot that is able to solve simple mazes using data gathered by its ultrasonic sensor.",
     // ADD A THE CODE FOR THE MAZE SOLVER ROBOT TO A GITHUB REPO AND ADD THE GITHUB LINK HERE
-    tech: [
-      "C++",
-      "Arduino",
-    ]
+    tech: ["C++", "Arduino"],
   },
 ];
 
