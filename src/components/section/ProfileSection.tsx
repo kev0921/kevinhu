@@ -48,14 +48,23 @@ const ProfileSection: React.FC<IProfileSection> = ({ song }) => {
           fontSize={{ base: "28px", md: "40px", lg: "48px" }}
           mb={3}
         >
-          Hey, I am Kevin Hu! <span className="waving-hand">👋</span>
+          Hey, I am{" "}
+          <Box
+            as="span"
+            bgGradient="linear(to-r, blue.400, purple.500)"
+            bgClip="text"
+          >
+            Kevin Hu
+          </Box>
+          ! <span className="waving-hand">👋</span>
         </Heading>
-        <MotionFlex alignItems={"flex-end"} whileHover={{ scale: 1.2 }}>
+        <MotionFlex alignItems={"flex-end"} whileHover={{ scale: 1.1 }}>
           <Avatar
             name="Kevin Hu"
             src="/profile_picture.png"
             mb={5}
-            size="lg"
+            size="xl"
+            boxShadow="0 0 0 3px var(--chakra-colors-blue-500), 0 0 25px rgba(66, 153, 225, 0.45)"
           />
         </MotionFlex>
       </MotionFlex>
@@ -71,10 +80,17 @@ const ProfileSection: React.FC<IProfileSection> = ({ song }) => {
           <SocialButton social={resume} />
           <Link href={"/contact"} style={{ textDecoration: "none" }}>
             <Button
-              colorScheme="blue"
+              bgGradient="linear(to-r, blue.400, purple.500)"
+              color="white"
               size="sm"
               margin={"5px"}
               leftIcon={<BiPhoneCall />}
+              _hover={{
+                bgGradient: "linear(to-r, blue.500, purple.600)",
+                boxShadow: "0 4px 15px rgba(66, 153, 225, 0.4)",
+                transform: "translateY(-1px)",
+              }}
+              transition="all 0.2s"
             >
               Contact Me
             </Button>

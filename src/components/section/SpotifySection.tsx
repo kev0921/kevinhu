@@ -29,9 +29,11 @@ const SpotifySection: React.FC<ISpotifySection> = ({ song }) => {
         margin={2}
         rounded={"10px"}
         _hover={{
-          borderColor: "blue.500",
+          borderColor: "#1ED760",
+          boxShadow: "0 4px 20px rgba(30, 215, 96, 0.2)",
         }}
         borderColor={useColorModeValue("gray.300", "gray.700")}
+        transition="all 0.25s"
         // href={song?.isPlaying ? song.songUrl : null}
       >
         <LinkOverlay

@@ -23,10 +23,16 @@ const CompanyCard: React.FC<ICompanyCard> = ({ company, colorMode }) => {
       px={4}
       py={5}
       borderWidth="1px"
+      borderLeftWidth="3px"
+      borderLeftColor={useColorModeValue("blue.400", "blue.500")}
       rounded="xl"
       bg={useColorModeValue("white", "gray.800")}
       borderColor={useColorModeValue("gray.100", "gray.700")}
-      _hover={{ borderColor: "blue.500" }}
+      _hover={{
+        borderColor: "blue.400",
+        boxShadow: "0 4px 20px rgba(66, 153, 225, 0.15)",
+      }}
+      transition="all 0.25s"
       position="relative"
     >
       <LinkOverlay href={company.url} rel="noopener" isExternal>
