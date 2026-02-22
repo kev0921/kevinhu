@@ -25,12 +25,15 @@ const StackCard: React.FC<IStackCard> = ({ stack }) => {
         borderColor={useColorModeValue("gray.300", "gray.700")}
         borderRadius={5}
         borderWidth="1px"
-        transition=".5s"
+        transition="all 0.25s"
         cursor="pointer"
         display="flex"
         role="group"
+        bg={useColorModeValue("white", "gray.800")}
         _hover={{
           borderColor: "blue.500",
+          boxShadow: "0 4px 20px rgba(66, 153, 225, 0.2)",
+          bg: useColorModeValue("blue.50", "gray.700"),
         }}
       >
         <Flex alignItems="center" justifyContent="space-between">

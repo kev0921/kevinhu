@@ -34,20 +34,22 @@ const NavBar = () => {
             rounded={"md"}
             _hover={{
               textDecoration: "none",
-              bg: useColorModeValue("gray.200", "gray.900"),
+              bg: useColorModeValue("gray.100", "whiteAlpha.100"),
+              color: "blue.400",
             }}
             bg={
               link.route === asPath
-                ? useColorModeValue("gray.200", "gray.900")
+                ? useColorModeValue("blue.50", "whiteAlpha.100")
                 : "none"
             }
             color={
               link.route === asPath
-                ? useColorModeValue("blue.500", "white")
-                : useColorModeValue("black", "white")
+                ? "blue.400"
+                : useColorModeValue("gray.700", "gray.300")
             }
+            fontWeight={link.route === asPath ? "semibold" : "medium"}
+            transition="all 0.2s"
             onClick={isOpen ? onClose : onOpen}
-            fontWeight='medium'
           >
             {link.name}
           </CharkaLink>
@@ -58,7 +60,19 @@ const NavBar = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue("white", "gray.700")} px={4} boxShadow={"lg"}>
+      <Box
+        position="sticky"
+        top={0}
+        zIndex={10}
+        bg={useColorModeValue("rgba(255,255,255,0.85)", "rgba(17,24,39,0.85)")}
+        sx={{
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+        px={4}
+        borderBottom="1px solid"
+        borderBottomColor={useColorModeValue("gray.200", "gray.700")}
+      >
         <Flex
           h={16}
           alignItems={"center"}
