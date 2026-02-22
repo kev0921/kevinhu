@@ -146,11 +146,17 @@ The site degrades gracefully without Spotify credentials (shows "Not Listening")
 
 ## Deployment
 
-Deployed on **Netlify**. The `netlify.toml` defines:
+### Netlify (primary, live site)
+
+Configured via `netlify.toml`:
 - Build command: `next build`
 - Publish directory: `.next`
 
 The `postbuild` script automatically regenerates `sitemap.xml` and `robots.txt` via `next-sitemap` after each production build.
+
+### GitHub Pages (secondary, via CI)
+
+`.github/workflows/nextjs.yml` runs on pushes to `main` and deploys a static export (`next export` → `./out`) to GitHub Pages. This workflow targets the `main` branch — the default development branch is `master`, so this workflow only fires if the project switches to a `main` branch. The live canonical site is on Netlify.
 
 ## Adding Content
 
