@@ -113,6 +113,26 @@ const techStacks = [
 
 const companies = [
   {
+    title: "PointClickCare",
+    alt: "PointClickCare image",
+    url: "https://pointclickcare.com/",
+    role: "Software Engineer Intern",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Microsoft SQL Server",
+      "React",
+      "GraphQL",
+      "Power BI",
+      "Jenkins",
+      "Kibana",
+      "JUnit",
+      "Mockito",
+    ],
+    period: "May 2025 - Dec 2025",
+    logo: "/pointClickCareLogo.png",
+  },
+  {
     title: "Mengalo",
     alt: "Mengalo image",
     url: "https://www.mengalo.com/",
@@ -204,6 +224,24 @@ const educations = [
 ];
 
 const sideProjects = [
+  {
+    name: "Subhub",
+    imageUrl: "/Subhub.png",
+    alt: "Subhub",
+    summary:
+      "Subhub is a full-stack subletting platform that helps students find and post sublets. Users can browse listings, chat in real time, and manage their rental posts with ease.",
+    link: "https://github.com/kev0921/subhub",
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind CSS",
+      "AWS",
+      "Heroku",
+      "Socket.IO",
+    ],
+  },
   {
     name: "Caspr",
     imageUrl: "/Caspr1.jpg",
