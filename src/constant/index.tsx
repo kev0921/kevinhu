@@ -147,7 +147,7 @@ const companies = [
       "Jest",
       "Git",
     ],
-    period: "September 2024 - Present",
+    period: "September 2024 - April 2025",
     logo: "/mengaloLogo.png",
   },
   {
