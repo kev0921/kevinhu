@@ -31,6 +31,7 @@ const menuLinks = [
 
 const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Kevin Hu. All Rights Reserved.`,
+  webringMember: "kevin-hu",
   author: {
     name: "Kevin Hu",
     accounts: [

@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Flex,
 } from "@chakra-ui/react";
+import Script from "next/script";
 import { siteConfig } from "../constant";
 
 const iconProps = {
@@ -44,6 +45,14 @@ const Footer = () => {
           © {new Date().getFullYear()} Kevin Hu{" "}
         </Text>
 
+        <Box textAlign="center" fontSize="sm">
+          <Box
+            as="div"
+            data-webring="ca"
+            data-member={siteConfig.webringMember}
+          />
+        </Box>
+
         <Box textAlign="center">
           {siteConfig.author.accounts.map((sc, index) => (
             <IconButton
@@ -59,6 +68,7 @@ const Footer = () => {
           ))}
         </Box>
       </Flex>
+      <Script src="https://webring.ca/embed.js" strategy="afterInteractive" />
     </Stack>
   );
 };
