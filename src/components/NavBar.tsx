@@ -6,14 +6,14 @@ import {
   HStack,
   Box,
   Stack,
-  Link as CharkaLink,
+  Link as ChakraLink,
   useColorModeValue,
   Avatar,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { HamburgerIcon, CloseIcon} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { menuLinks } from "../constant";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
@@ -27,32 +27,41 @@ const NavBar = () => {
     <>
       {menuLinks.map((link) => (
         <NextLink href={link.route} key={link.name} passHref>
-          <CharkaLink
+          <ChakraLink
             href={link.route}
-            px={2}
-            py={1}
-            rounded={"md"}
+            px={3}
+            py={1.5}
+            rounded={"full"}
+            fontSize="sm"
+            letterSpacing="0.01em"
             _hover={{
               textDecoration: "none",
-              bg: useColorModeValue("gray.100", "whiteAlpha.100"),
-              color: "blue.400",
+              bg: useColorModeValue(
+                "rgba(255,255,255,0.6)",
+                "rgba(255,255,255,0.1)"
+              ),
+              color: useColorModeValue("#4a3aff", "#a78bfa"),
+              transform: "scale(1.05)",
             }}
             bg={
               link.route === asPath
-                ? useColorModeValue("blue.50", "whiteAlpha.100")
-                : "none"
+                ? useColorModeValue(
+                    "rgba(255,255,255,0.7)",
+                    "rgba(255,255,255,0.12)"
+                  )
+                : "transparent"
             }
             color={
               link.route === asPath
-                ? "blue.400"
-                : useColorModeValue("gray.700", "gray.300")
+                ? useColorModeValue("#4a3aff", "#a78bfa")
+                : useColorModeValue("gray.600", "whiteAlpha.800")
             }
-            fontWeight={link.route === asPath ? "semibold" : "medium"}
-            transition="all 0.2s"
-            onClick={isOpen ? onClose : onOpen}
+            fontWeight={link.route === asPath ? "600" : "500"}
+            transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
+            onClick={isOpen ? onClose : undefined}
           >
             {link.name}
-          </CharkaLink>
+          </ChakraLink>
         </NextLink>
       ))}
     </>
@@ -62,61 +71,100 @@ const NavBar = () => {
     <>
       <Box
         position="sticky"
-        top={0}
+        top={3}
         zIndex={10}
-        bg={useColorModeValue("rgba(255,255,255,0.85)", "rgba(17,24,39,0.85)")}
-        sx={{
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-        }}
+        mx="auto"
+        maxW="container.lg"
         px={4}
-        borderBottom="1px solid"
-        borderBottomColor={useColorModeValue("gray.200", "gray.700")}
+        pt={2}
       >
-        <Flex
-          h={16}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-          w={["95%", "95%", "95%"]}
-          maxW={"container.lg"}
-          mx="auto"
+        <Box
+          bg={useColorModeValue(
+            "rgba(255, 255, 255, 0.55)",
+            "rgba(255, 255, 255, 0.06)"
+          )}
+          sx={{
+            backdropFilter: "blur(24px) saturate(180%)",
+            WebkitBackdropFilter: "blur(24px) saturate(180%)",
+          }}
+          px={5}
+          py={1}
+          borderRadius="full"
+          border="1px solid"
+          borderColor={useColorModeValue(
+            "rgba(255,255,255,0.7)",
+            "rgba(255,255,255,0.12)"
+          )}
+          boxShadow={useColorModeValue(
+            "0 4px 30px rgba(0, 0, 0, 0.06)",
+            "0 4px 30px rgba(0, 0, 0, 0.3)"
+          )}
         >
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={["inherit", "inherit", "none"]}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={"center"}>
-            <Avatar
-              as={CharkaLink}
-              size="sm"
-              href="/"
-              src="/profile_picture.png"
-              _hover={{ borderColor: "blue.500" }}
-            />
-            <HStack as="nav" spacing="4" display={{ base: "none", md: "flex" }}>
-              {navItem}
-            </HStack>
-          </HStack>
-          <Flex alignItems={"center"}>
-            <ColorModeSwitcher justifySelf="flex-end" />
-          </Flex>
-        </Flex>
-
-        {isOpen && (
-          <Box
-            pb={4}
-            w={["100%", "100%", "80%"]}
-            maxW={"container.lg"}
-            display={["inherit", "inherit", "none"]}
+          <Flex
+            h={14}
+            alignItems={"center"}
+            justifyContent={"space-between"}
           >
-            <Stack as={"nav"} spacing={4}>
-              {navItem}
-            </Stack>
-          </Box>
-        )}
+            <IconButton
+              size={"sm"}
+              icon={isOpen ? <CloseIcon boxSize={3} /> : <HamburgerIcon />}
+              aria-label={"Open Menu"}
+              display={["inherit", "inherit", "none"]}
+              onClick={isOpen ? onClose : onOpen}
+              variant="ghost"
+              rounded="full"
+              _hover={{
+                bg: useColorModeValue(
+                  "rgba(255,255,255,0.5)",
+                  "rgba(255,255,255,0.1)"
+                ),
+              }}
+            />
+            <HStack spacing={8} alignItems={"center"}>
+              <Avatar
+                as={ChakraLink}
+                size="sm"
+                href="/"
+                src="/profile_picture.png"
+                border="2px solid"
+                borderColor={useColorModeValue(
+                  "rgba(120, 80, 255, 0.3)",
+                  "rgba(120, 80, 255, 0.4)"
+                )}
+                _hover={{
+                  borderColor: useColorModeValue(
+                    "rgba(120, 80, 255, 0.6)",
+                    "rgba(120, 80, 255, 0.7)"
+                  ),
+                  transform: "scale(1.08)",
+                }}
+                transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
+              />
+              <HStack
+                as="nav"
+                spacing="1"
+                display={{ base: "none", md: "flex" }}
+              >
+                {navItem}
+              </HStack>
+            </HStack>
+            <Flex alignItems={"center"}>
+              <ColorModeSwitcher justifySelf="flex-end" />
+            </Flex>
+          </Flex>
+
+          {isOpen && (
+            <Box
+              pb={4}
+              pt={2}
+              display={["inherit", "inherit", "none"]}
+            >
+              <Stack as={"nav"} spacing={2}>
+                {navItem}
+              </Stack>
+            </Box>
+          )}
+        </Box>
       </Box>
     </>
   );

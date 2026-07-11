@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,12 +8,15 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+    'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Custom Scrollbar (thin, glass-feel) ─── */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -19,12 +24,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(66, 153, 225, 0.35);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(66, 153, 225, 0.65);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(120, 160, 255, 0.3);
 }
 
 a {
@@ -36,6 +46,144 @@ a {
   box-sizing: border-box;
 }
 
+/* ═══════════════════════════════════════════
+   ANIMATED BACKGROUND BLOBS
+   ═══════════════════════════════════════════ */
+
+@keyframes float-blob-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(80px, -60px) scale(1.1);
+  }
+  50% {
+    transform: translate(-40px, 80px) scale(0.95);
+  }
+  75% {
+    transform: translate(60px, 40px) scale(1.05);
+  }
+}
+
+@keyframes float-blob-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-70px, 50px) scale(1.08);
+  }
+  50% {
+    transform: translate(60px, -70px) scale(0.92);
+  }
+  75% {
+    transform: translate(-30px, -40px) scale(1.02);
+  }
+}
+
+@keyframes float-blob-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, 70px) scale(1.12);
+  }
+  66% {
+    transform: translate(-80px, -30px) scale(0.9);
+  }
+}
+
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bg-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(120, 80, 255, 0.6), rgba(80, 140, 255, 0.3));
+  top: -10%;
+  left: -5%;
+  animation: float-blob-1 20s ease-in-out infinite;
+}
+
+.bg-blob-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 200, 200, 0.5), rgba(80, 180, 255, 0.25));
+  top: 40%;
+  right: -8%;
+  animation: float-blob-2 25s ease-in-out infinite;
+}
+
+.bg-blob-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200, 100, 255, 0.45), rgba(255, 120, 180, 0.2));
+  bottom: -5%;
+  left: 30%;
+  animation: float-blob-3 22s ease-in-out infinite;
+}
+
+/* Light mode blob overrides */
+[data-theme="light"] .bg-blob,
+.chakra-ui-light .bg-blob {
+  opacity: 0.2;
+}
+
+.chakra-ui-light .bg-blob-1 {
+  background: radial-gradient(circle, rgba(100, 120, 255, 0.4), rgba(140, 180, 255, 0.2));
+}
+
+.chakra-ui-light .bg-blob-2 {
+  background: radial-gradient(circle, rgba(0, 180, 200, 0.35), rgba(100, 200, 255, 0.15));
+}
+
+.chakra-ui-light .bg-blob-3 {
+  background: radial-gradient(circle, rgba(180, 100, 255, 0.3), rgba(255, 140, 200, 0.15));
+}
+
+/* ═══════════════════════════════════════════
+   GLASS MATERIAL SYSTEM
+   ═══════════════════════════════════════════ */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.chakra-ui-light .glass-panel {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+.chakra-ui-light .glass-panel:hover {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ═══════════════════════════════════════════
+   WAVING HAND
+   ═══════════════════════════════════════════ */
+
 .waving-hand {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -45,48 +193,206 @@ a {
 }
 
 @keyframes wave-animation {
-  0% { transform: rotate( 0.0deg) }
-  15% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-  30% { transform: rotate(-8.0deg) }
-  40% { transform: rotate(14.0deg) }
-  50% { transform: rotate(-4.0deg) }
-  60% { transform: rotate(10.0deg) }
-  70% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
- 100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-  from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
+/* ═══════════════════════════════════════════
+   SPOTIFY ROTATING ICON
+   ═══════════════════════════════════════════ */
+
 @keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotating {
+  animation: rotating 2s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   SPOTIFY MUSIC WAVE BARS
+   ═══════════════════════════════════════════ */
+
+.music-wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+}
+
+.music-wave .bar {
+  width: 3px;
+  border-radius: 2px;
+  background: #1ED760;
+  animation: music-bounce var(--duration, 0.6s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes music-bounce {
+  0% {
+    height: 4px;
+    opacity: 0.6;
   }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+  100% {
+    height: 18px;
+    opacity: 1;
   }
 }
-.rotating {
-  -webkit-animation: rotating 2s linear infinite;
-  -moz-animation: rotating 2s linear infinite;
-  -ms-animation: rotating 2s linear infinite;
-  -o-animation: rotating 2s linear infinite;
-  animation: rotating 2s linear infinite;
+
+/* ═══════════════════════════════════════════
+   TIMELINE STYLES
+   ═══════════════════════════════════════════ */
+
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(120, 120, 255, 0.5),
+    rgba(160, 100, 255, 0.3),
+    rgba(120, 120, 255, 0.1)
+  );
+  border-radius: 1px;
+}
+
+.chakra-ui-light .timeline-line {
+  background: linear-gradient(
+    to bottom,
+    rgba(80, 100, 255, 0.4),
+    rgba(140, 80, 255, 0.2),
+    rgba(80, 100, 255, 0.08)
+  );
+}
+
+.timeline-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cff, #5b9cff);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(120, 100, 255, 0.5);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.chakra-ui-light .timeline-node {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(100, 80, 255, 0.35);
+}
+
+/* ═══════════════════════════════════════════
+   GLOW EFFECTS
+   ═══════════════════════════════════════════ */
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(120, 100, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(120, 100, 255, 0.3);
+  }
+}
+
+.glow-on-hover:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   BENTO GRID HELPERS
+   ═══════════════════════════════════════════ */
+
+.bento-item {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.12)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.chakra-ui-light .bento-item::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.7)
+  );
+}
+
+/* ═══════════════════════════════════════════
+   TAG / PILL FILTERS
+   ═══════════════════════════════════════════ */
+
+.pill-filter {
+  display: inline-flex;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.pill-filter:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.pill-filter.active {
+  background: linear-gradient(135deg, rgba(120, 80, 255, 0.5), rgba(80, 140, 255, 0.4));
+  border-color: rgba(120, 100, 255, 0.4);
+  box-shadow: 0 0 16px rgba(120, 100, 255, 0.25);
+}
+
+.chakra-ui-light .pill-filter {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #333;
+}
+
+.chakra-ui-light .pill-filter:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.chakra-ui-light .pill-filter.active {
+  background: linear-gradient(135deg, rgba(100, 70, 255, 0.2), rgba(80, 130, 255, 0.15));
+  color: #4a3aff;
+  border-color: rgba(100, 80, 255, 0.25);
 }

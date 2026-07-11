@@ -8,7 +8,6 @@ import {
   Icon,
   Flex,
   Tooltip,
-  LinkBox,
 } from "@chakra-ui/react";
 import { MotionBox } from "../utils/motion";
 import { FiGithub } from "react-icons/fi";
@@ -38,96 +37,109 @@ const languageColors: Record<string, string> = {
 };
 
 const GithubCard: React.FC<IGithubCard> = ({ gitRepo }) => {
-  console.log("github", gitRepo);
   const langColor = gitRepo.language
-    ? languageColors[gitRepo.language] ?? "gray"
-    : "gray";
+    ? languageColors[gitRepo.language] ?? "#888"
+    : "#888";
+
+  const cardBg = useColorModeValue(
+    "rgba(255, 255, 255, 0.5)",
+    "rgba(255, 255, 255, 0.04)"
+  );
+  const cardBorder = useColorModeValue(
+    "rgba(255, 255, 255, 0.7)",
+    "rgba(255, 255, 255, 0.08)"
+  );
 
   return (
-    <MotionBox whileHover={{ y: -5 }}>
-      <LinkBox
-        py={2}
-        px={[2, 4]}
-        mt={2}
-        rounded="xl"
-        borderWidth="1px"
-        bg={useColorModeValue("white", "gray.800")}
-        borderColor={useColorModeValue("gray.300", "gray.700")}
-        _hover={{
-          borderColor: "blue.500",
-          boxShadow: "0 4px 20px rgba(66, 153, 225, 0.2)",
+    <MotionBox
+      whileHover={{ y: -5, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 350, damping: 22 }}
+    >
+      <Box
+        className="bento-item"
+        py={4}
+        px={5}
+        bg={cardBg}
+        border="1px solid"
+        borderColor={cardBorder}
+        sx={{
+          backdropFilter: "blur(20px) saturate(180%)",
+          WebkitBackdropFilter: "blur(20px) saturate(180%)",
         }}
-        transition="all 0.25s"
-        minH="120px"
+        _hover={{
+          borderColor: langColor,
+          boxShadow: `0 8px 32px ${langColor}20, 0 0 0 1px ${langColor}30`,
+        }}
+        transition="all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)"
+        minH="130px"
+        cursor="pointer"
+        onClick={() => window.open(gitRepo.clone_url)}
       >
-        <VStack overflow="hidden" align="start" spacing={1}>
-          <VStack spacing={1} align="start" w="100%">
-            <Flex
-              justifyContent={"space-between"}
-              width="100%"
-              onClick={(e) => window.open(gitRepo.clone_url)}
-            >
-              <Tooltip hasArrow label={gitRepo.clone_url} placement="top">
-                <HStack cursor={"pointer"}>
-                  <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />
-                  <Text
-                    fontSize="sm"
-                    noOfLines={1}
-                    fontWeight="600"
-                    align="left"
-                    color={"blue.400"}
-                  >
-                    {gitRepo.name}
+        <VStack overflow="hidden" align="start" spacing={2}>
+          <Flex justifyContent="space-between" width="100%">
+            <Tooltip hasArrow label={gitRepo.clone_url} placement="top">
+              <HStack cursor="pointer" spacing={2}>
+                <Icon as={FiGithub} boxSize="1em" color={langColor} />
+                <Text
+                  fontSize="sm"
+                  noOfLines={1}
+                  fontWeight="700"
+                  bgGradient={`linear(to-r, ${langColor}, #7c5cff)`}
+                  bgClip="text"
+                >
+                  {gitRepo.name}
+                </Text>
+              </HStack>
+            </Tooltip>
+            <HStack spacing={3}>
+              <HStack spacing={1} color="yellow.400">
+                <Icon as={BiStar} boxSize="0.9em" />
+                <Text fontSize="xs" fontWeight="600">
+                  {gitRepo.stargazers_count}
+                </Text>
+              </HStack>
+              {gitRepo.forks_count > 0 && (
+                <HStack spacing={1} color={useColorModeValue("gray.500", "whiteAlpha.600")}>
+                  <Icon as={BiGitRepoForked} boxSize="0.9em" />
+                  <Text fontSize="xs" fontWeight="600">
+                    {gitRepo.forks_count}
                   </Text>
                 </HStack>
-              </Tooltip>
-              <HStack>
-                <Box _hover={{ color: "yellow.400" }} color="yellow.400">
-                  <Icon as={BiStar} boxSize="0.9em" mt={"1px"} />
-                  <Box as="span" ml="1" fontSize="sm">
-                    {gitRepo.stargazers_count}
-                  </Box>
-                </Box>
-                {gitRepo.forks_count && (
-                  <Box _hover={{ color: "blue.400" }}>
-                    <Icon as={BiGitRepoForked} boxSize="0.9em" mt={"1px"} />
-                    <Box as="span" ml="1" fontSize="sm">
-                      {gitRepo.forks_count}
-                    </Box>
-                  </Box>
-                )}
-              </HStack>
-            </Flex>
-            {gitRepo.language && (
-              <Flex justifyContent={"space-between"} width="100%">
-                <Box>
-                  <HStack spacing="1">
-                    <Box
-                      w="10px"
-                      h="10px"
-                      borderRadius="full"
-                      bg={langColor}
-                      display="inline-block"
-                      flexShrink={0}
-                    />
-                    <Text
-                      fontSize={["0.55rem", "inherit", "inherit"]}
-                      color={useColorModeValue("gray.600", "gray.400")}
-                    >
-                      {gitRepo.language}
-                    </Text>
-                  </HStack>
-                </Box>
-              </Flex>
-            )}
-          </VStack>
-          <Box>
-            <Text fontSize="sm" noOfLines={2} textAlign="left">
-              {gitRepo.description}
-            </Text>
-          </Box>{" "}
+              )}
+            </HStack>
+          </Flex>
+
+          {gitRepo.language && (
+            <HStack spacing={2}>
+              <Box
+                w="8px"
+                h="8px"
+                borderRadius="full"
+                bg={langColor}
+                boxShadow={`0 0 8px ${langColor}60`}
+                flexShrink={0}
+              />
+              <Text
+                fontSize="xs"
+                fontWeight="600"
+                color={useColorModeValue("gray.500", "whiteAlpha.500")}
+              >
+                {gitRepo.language}
+              </Text>
+            </HStack>
+          )}
+
+          <Text
+            fontSize="sm"
+            noOfLines={2}
+            color={useColorModeValue("gray.600", "whiteAlpha.600")}
+            lineHeight="1.6"
+          >
+            {gitRepo.description}
+          </Text>
         </VStack>
-      </LinkBox>
+      </Box>
     </MotionBox>
   );
 };
