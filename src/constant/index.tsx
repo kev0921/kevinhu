@@ -1,22 +1,21 @@
 import {
   SiGmail,
   SiTypescript,
-  SiTailwindcss,
+  SiTensorflow,
   SiChakraui,
   SiMongodb,
   SiPusher,
-  SiTensorflow,
   SiExpress,
-  SiFlask,
   SiPostgresql,
+  SiSpringboot,
+  SiMicrosoftazure,
 } from "react-icons/si";
 import {
-  FaReact,
   FaJs,
   FaLinkedin,
   FaGithub,
   FaInstagram,
-  FaFlask,
+  FaJava,
 } from "react-icons/fa";
 import { CgAlbum } from "react-icons/cg";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -71,19 +70,14 @@ const resume = {
 
 const techStacks = [
   {
-    name: "React",
-    icon: <FaReact fontSize="20px" />,
-    url: "https://react.dev/",
+    name: "Java",
+    icon: <FaJava fontSize="20px" />,
+    url: "https://www.java.com/",
   },
   {
-    name: "TensorFlow",
-    icon: <SiTensorflow fontSize="20px" />,
-    url: "https://www.tensorflow.org/",
-  },
-  {
-    name: "Flask",
-    icon: <SiFlask fontSize="20px" />,
-    url: "https://flask.palletsprojects.com/en/3.0.x/",
+    name: "Spring Boot",
+    icon: <SiSpringboot fontSize="20px" />,
+    url: "https://spring.io/projects/spring-boot",
   },
   {
     name: "NextJS",
@@ -96,9 +90,9 @@ const techStacks = [
     url: "https://www.typescriptlang.org/",
   },
   {
-    name: "TailwindCSS",
-    icon: <SiTailwindcss fontSize="20px" />,
-    url: "https://tailwindcss.com/",
+    name: "TensorFlow",
+    icon: <SiTensorflow fontSize="20px" />,
+    url: "https://www.tensorflow.org/",
   },
   {
     name: "MongoDB",
@@ -110,9 +104,33 @@ const techStacks = [
     icon: <SiPostgresql fontSize="20px" />,
     url: "https://www.postgresql.org/",
   },
+  {
+    name: "Azure",
+    icon: <SiMicrosoftazure fontSize="20px" />,
+    url: "https://azure.microsoft.com/",
+  },
 ];
 
 const companies = [
+  {
+    title: "Government of Ontario",
+    alt: "Government of Ontario image",
+    url: "https://www.ontario.ca/page/government-ontario",
+    role: "Software Engineer Intern",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Microsoft SQL Server",
+      "Next.js",
+      "Azure",
+      "SQL",
+      "TypeScript",
+      "Microsoft Entra ID",
+      "JUnit",
+    ],
+    period: "Jan 2026 - Aug 2026",
+    logo: "/GovernmentOntarioLogo.jpg",
+  },
   {
     title: "PointClickCare",
     alt: "PointClickCare image",
@@ -249,7 +267,7 @@ const sideProjects = [
     alt: "Caspr",
     summary:
       "Caspr (Causal Analysis and Structure Path Relationships) is a web application that empowers users to explore complex causal diagrams in an intuitive 3D environment.",
-    link: "https://caspr.vercel.app/",
+    link: "https://github.com/kev0921/Caspr/",
     tech: [
       "React",
       "Next.js",

@@ -30,9 +30,12 @@ export const ColorModeSwitcher = (props: any) => {
         onClick={handleClick}
         icon={<SwitchIcon />}
         aria-label={`Switch to ${text} mode`}
+        rounded="full"
         _hover={{
-          bg: useColorModeValue("gray.200", "gray.900")
+          bg: useColorModeValue("rgba(255,255,255,0.5)", "rgba(255,255,255,0.1)"),
+          transform: "scale(1.1) rotate(15deg)",
         }}
+        transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
         {...props}
       />
     </Tooltip>

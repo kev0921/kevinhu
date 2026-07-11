@@ -24,6 +24,8 @@ const Footer = () => {
       isInline
       spacing={[1, 2]}
       p={4}
+      pt={16}
+      pb={8}
       justifyContent="space-between"
       alignItems="center"
       w={["100%", "90%", "90%"]}
@@ -39,10 +41,12 @@ const Footer = () => {
       >
         <Text
           textAlign="center"
-          fontSize="sm"
-          color={useColorModeValue("gray.500", "gray.200")}
+          fontSize="xs"
+          fontWeight="500"
+          letterSpacing="0.04em"
+          color={useColorModeValue("gray.400", "whiteAlpha.400")}
         >
-          © {new Date().getFullYear()} Kevin Hu{" "}
+          © {new Date().getFullYear()} Kevin Hu
         </Text>
 
         <Box textAlign="center" fontSize="sm">
@@ -64,6 +68,10 @@ const Footer = () => {
               colorScheme={sc.type}
               icon={sc.icon}
               {...iconProps}
+              _hover={{
+                transform: "scale(1.15) translateY(-2px)",
+              }}
+              transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
             />
           ))}
         </Box>

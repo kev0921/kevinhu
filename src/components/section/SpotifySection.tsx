@@ -7,11 +7,11 @@ import {
   Text,
   Heading,
   VStack,
-  useColorModeValue,
   HStack,
+  Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { MotionBox } from "../../utils/motion";
-import Paragraph from "../Paragraph";
 import { SiSpotify } from "react-icons/si";
 import { SpotifySong } from "../../types/spotify";
 
@@ -19,72 +19,112 @@ interface ISpotifySection {
   song: SpotifySong;
 }
 
+const MusicWave = () => (
+  <div className="music-wave">
+    {[0.2, 0.4, 0.1, 0.35, 0.25].map((delay, i) => (
+      <div
+        key={i}
+        className="bar"
+        style={
+          {
+            "--delay": `${delay}s`,
+            "--duration": `${0.5 + Math.random() * 0.3}s`,
+          } as React.CSSProperties
+        }
+      />
+    ))}
+  </div>
+);
+
 const SpotifySection: React.FC<ISpotifySection> = ({ song }) => {
   return (
-    <MotionBox whileHover={{ y: -5 }} mt={5}>
+    <MotionBox
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+    >
       <LinkBox
-        p={4}
+        className="glass-panel bento-item"
+        p={5}
         display={{ md: "flex" }}
-        borderWidth={1}
-        margin={2}
-        rounded={"10px"}
+        cursor="pointer"
         _hover={{
-          borderColor: "#1ED760",
-          boxShadow: "0 4px 20px rgba(30, 215, 96, 0.2)",
+          borderColor: "rgba(30, 215, 96, 0.4)",
+          boxShadow: "0 8px 32px rgba(30, 215, 96, 0.15)",
         }}
-        borderColor={useColorModeValue("gray.300", "gray.700")}
-        transition="all 0.25s"
-        // href={song?.isPlaying ? song.songUrl : null}
       >
         <LinkOverlay
-          //   href={song?.isPlaying ? song?.songUrl : ""}
+          href={song?.isPlaying ? song?.songUrl : undefined}
           rel="noopener"
           isExternal
         >
-          <VStack>
-            <HStack alignSelf={{ base: "center", md: "flex-start" }} mb={2}>
-              <SiSpotify size={20} color={"#1ED760"} className="rotating" />
-              <Text>Spotify</Text>
+          <VStack align="start" spacing={3} w="100%">
+            <HStack spacing={2}>
+              <SiSpotify size={18} color={"#1ED760"} />
+              <Text
+                fontSize="xs"
+                fontWeight="600"
+                letterSpacing="0.06em"
+                textTransform="uppercase"
+                color={useColorModeValue("gray.500", "whiteAlpha.600")}
+              >
+                {song?.isPlaying ? "Now Playing" : "Spotify"}
+              </Text>
+              {song?.isPlaying && <MusicWave />}
             </HStack>
 
             <Flex
               alignItems="center"
-              justifyContent="space-around"
-              direction={["column", "column", "row", "row"]}
+              direction={["column", "column", "row"]}
+              gap={4}
+              w="100%"
             >
               {song?.isPlaying ? (
                 <Image
-                  margin="auto"
                   src={song?.albumImageUrl}
                   alt={song?.album}
-                  objectFit={"cover"}
-                  boxSize={["100px", "100px", "100px", "100px"]}
-                  fallback={<SiSpotify size={20} color={"#1ED760"} />}
+                  objectFit="cover"
+                  boxSize="64px"
+                  borderRadius="16px"
+                  flexShrink={0}
+                  fallback={<SiSpotify size={48} color={"#1ED760"} />}
                 />
               ) : (
-                <SiSpotify size={100} color={"#1ED760"} />
+                <Box
+                  w="64px"
+                  h="64px"
+                  borderRadius="16px"
+                  bg={useColorModeValue(
+                    "rgba(30, 215, 96, 0.08)",
+                    "rgba(30, 215, 96, 0.1)"
+                  )}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexShrink={0}
+                >
+                  <SiSpotify size={32} color={"#1ED760"} />
+                </Box>
               )}
 
-              <Flex flexDirection="column" ml={[0, 0, 5, 5]} mt={[5, 5, 0, 0]}>
+              <VStack align="start" spacing={0} flex={1} minW={0}>
                 <Heading
-                  as="h2"
-                  fontSize="lg"
-                  fontWeight="600"
-                  color={"blue.400"}
-                  alignSelf={["center", "flex-start"]}
+                  as="h3"
+                  fontSize="md"
+                  fontWeight="700"
+                  noOfLines={1}
+                  bgGradient="linear(to-r, #1ED760, #1DB954)"
+                  bgClip="text"
                 >
                   {song?.isPlaying ? song?.title : "Not Listening"}
                 </Heading>
-
-                <Paragraph
-                  textProps={{
-                    mt: "5px",
-                    alignSelf: ["center", "center", "flex-start", "flex-start"],
-                  }}
+                <Text
+                  fontSize="sm"
+                  noOfLines={1}
+                  color={useColorModeValue("gray.500", "whiteAlpha.600")}
                 >
-                  <Text>{song?.isPlaying ? song?.artist : "Spotify"}</Text>
-                </Paragraph>
-              </Flex>
+                  {song?.isPlaying ? song?.artist : "Spotify"}
+                </Text>
+              </VStack>
             </Flex>
           </VStack>
         </LinkOverlay>
