@@ -18,6 +18,21 @@ const iconProps = {
 };
 
 const Footer = () => {
+  React.useEffect(() => {
+    const el = document.querySelector('div[data-webring="ca"]');
+    if (el && !el.shadowRoot) {
+      const script = document.createElement("script");
+      script.src = "https://webring.ca/embed.js";
+      script.defer = true;
+      document.body.appendChild(script);
+      return () => {
+        if (script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
+      };
+    }
+  }, []);
+
   return (
     <Stack
       as="footer"
